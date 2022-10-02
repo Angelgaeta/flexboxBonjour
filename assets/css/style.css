@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+   .burger{    
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+.burger input{display: none;}
+.burger input:checked~label{background: red;}
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*----------------------------- header*/
+.header{
+    background-color: #f5f5f5;
+    
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.nav-liens a, .nav-liens a:link{
+    text-decoration: none;
+    color: black;
+    margin-left: 60px;
+}
+.nav-liens a:hover{opacity: .5;}
+
+/*----------------------------- hero */
+.hero{
+    height: 80vh;
+    display: flex;
+}
+
+.hero-img{
+    width: 50%;
+    object-fit: cover;
+}
+
+.hero-text{
+    /*width: 50%;*/
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero-titre{
+    font-family: Playfair Display, serif;
+    font-size: 100px;
+    font-weight: bold;
+}
+.hero-desc{
+    font-weight: normal;
+}
+
+/*----------------------------- histoire */
+.histoire{
+    background-image: url('../img/motif.jpg');
+    color: white;
+    padding: 100px 20px;
+}
+
+.histoire-titre{
+    font-family: Playfair Display, serif;
+    font-size: 100px;
+    text-align: center;
+}
+.histoire-texte{
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/*----------------------------- galerie */
+.galerie{
+    height: 50vh;
+    display: flex;
+}
+.galerie img{object-fit: cover;}
+.photo1{width: 50%;}
+.photo2{width: 20%;}
+.photo3{width: 30%;}
+
+/*----------------------------- partenaires */
+.partenaires{
+    background-image: url('../img/motif.jpg');
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.partenaires-titre{font-family: Playfair Display, serif;}
+.partenaires-logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.partenaires-logos img{
+    margin: 20px;
+}
+
+
+/*point de rupture 640px */
+@media screen and (max-width:640px){
+      .burger div{
+        display: none;
+      }
+    .burger input:checked~label{
+        display: flex;
+
+    }
+    /*menu burger*/
+/*    input[type="checkbox"]:checked~label{
+        display: block;
+    }
+    input[type="checkbox"]~label{
+       display: none;
+    }*/
+    label.nav-liens a, .nav-liens a:link{
+        display: block;
+        text-align: right;
+
+    }
+
+    .hero-img{display: none;}
+    .hero-text{
+        width: 100%;
+        background-image: url('../img/chair-1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .histoire-titre{text-align: left;}
+
+    .galerie{flex-direction: column;}
+    .galerie img{
+        width: 100%;
+        height: 33.33%;
+    }
+}
